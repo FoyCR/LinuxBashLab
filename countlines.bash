@@ -72,9 +72,6 @@ if [[ -z $result ]]; then
     echo "No files found"
 else
     echo "$result" | while IFS= read -r file; do
-       #echo "File: $file           Lines: $(wc -l < "$file")"
-       #echo "Hello world" | awk -v val1="$file" -v val2="$(wc -l < "$file")" '{ printf "File:%s\tLines:%s\n", val1, val2 }'
        printf "File:%30s\tLines:%s\n" $file $(wc -l < "$file") 
-      # column -t  -s' ' <<< File:$file Lines:$(wc -l < "$file") 
     done
 fi
